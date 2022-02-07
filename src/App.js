@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { AvatarGenerator } from 'random-avatar-generator';
 
 import Form from './components/Form'
 import UserCard from './components/UserCard';
@@ -12,7 +13,8 @@ const initialForm = [
     email: "",
     city: "", 
     country: "",
-    description: ""
+    description: "", 
+    avatar: ""
   }
 ]
 
@@ -28,9 +30,14 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newUser = {id: ++id, ...form}
+
+    const generator = new AvatarGenerator();
+    let avatar = generator.generateRandomAvatar();
+
+    const newUser = {id: ++id, avatar: avatar, ...form}
     setUsers(users.concat(newUser))
-    setForm(initialForm)
+
+    setForm(form)
   }
 
   return (

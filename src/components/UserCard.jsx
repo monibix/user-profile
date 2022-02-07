@@ -4,6 +4,7 @@ const UserCard = ({ user }) => {
 
     return (
       <div className="user-card"> 
+        <p>Image: <img src={user.avatar} alt={user.name} /> </p>
         <p>ID: {user.id}</p>
         <p>Name: {user.name}</p>
         <p>Surname: {user.surname}</p>
@@ -16,3 +17,5 @@ const UserCard = ({ user }) => {
 }
 
 export default UserCard;
+
+
