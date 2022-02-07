@@ -39,6 +39,7 @@ function App() {
 
     setForm(form)
   }
+  console.log('users', users);
 
   return (
     <div>
