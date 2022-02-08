@@ -1,5 +1,6 @@
 import React from 'react';
 import { MdLocationCity, MdEmail } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 import Button from './Button';
 
 const UserCard = ({ user }) => {
@@ -16,7 +17,9 @@ const UserCard = ({ user }) => {
           <MdEmail  size={25}  /><p>{user.email}</p>
         </div>
         <div className="btns-container">
-          <Button text='Check details' />
+          <Link to={`/${user.id}`}> 
+            <Button text='Check details' />
+          </Link>
           <Button text='Edit profile' />
         </div>
       </div>
